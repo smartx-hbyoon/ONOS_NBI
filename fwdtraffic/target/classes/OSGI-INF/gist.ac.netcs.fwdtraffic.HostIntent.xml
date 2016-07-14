@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component immediate="true" name="gist.ac.netcs.fwdtraffic.HostIntent" activate="activate" deactivate="deactivate">
+        <implementation class="gist.ac.netcs.fwdtraffic.HostIntent"/>
+        <service servicefactory="false">
+            <provide interface="gist.ac.netcs.fwdtraffic.FirstHost"/>
+            <provide interface="org.onosproject.codec.CodecContext"/>
+            <provide interface="org.apache.karaf.shell.commands.Action"/>
+            <provide interface="org.apache.felix.gogo.commands.Action"/>
+        </service>
+        <property name="service.pid" value="gist.ac.netcs.fwdtraffic.HostIntent"/>
+        <reference name="intentService" interface="org.onosproject.net.intent.IntentService" cardinality="1..1" policy="static" bind="bindIntentService" unbind="unbindIntentService"/>
+        <reference name="hostService" interface="org.onosproject.net.host.HostService" cardinality="1..1" policy="static" bind="bindHostService" unbind="unbindHostService"/>
+        <reference name="coreService" interface="org.onosproject.core.CoreService" cardinality="1..1" policy="static" bind="bindCoreService" unbind="unbindCoreService"/>
+    </scr:component>
+</components>

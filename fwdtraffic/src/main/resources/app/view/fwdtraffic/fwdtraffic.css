@@ -1,0 +1,7 @@
+#ov-fwdtraffic h2 {
+    display: inline-block;
+}
+
+#ov-fwdtraffic div.ctrl-btns {
+    width: 45px;
+}

@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1455877884624
+Build-Jdk: 1.8.0_72
+Built-By: netcsnuc
+Bundle-ClassPath: WEB-INF/classes
+Bundle-Description: ONOS OSGi bundle archetype
+Bundle-ManifestVersion: 2
+Bundle-Name: fwdtraffic-rest
+Bundle-SymbolicName: gist.ac.netcs.fwdtraffic-rest
+Bundle-Version: 1.2.1
+Created-By: Apache Maven Bundle Plugin
+Export-Package: gist.ac.netcs.fwdtraffic.rest;uses:="com.fasterxml.jacks
+ on.databind.node,gist.ac.netcs.fwdtraffic,javax.ws.rs,javax.ws.rs.core,
+ javax.ws.rs.ext,org.onosproject.rest";version="1.2.1"
+Import-Package: javax.ws.rs;version="[1.1,2)",javax.ws.rs.core;version="
+ [1.1,2)",javax.ws.rs.ext;version="[1.1,2)",com.fasterxml.jackson.databi
+ nd;version="[2.4,3)",com.fasterxml.jackson.databind.node;version="[2.4,
+ 3)",org.onosproject.rest;version="[1.2,2)",org.onosproject.net;version=
+ "[1.2,2)",gist.ac.netcs.fwdtraffic,gist.ac.netcs.fwdtraffic.model;versi
+ on="[1.2,2)",org.apache.karaf.shell.commands;version="[3.0,4)",com.sun.
+ jersey.spi.container.servlet;version="[1.19,2)",com.fasterxml.jackson.c
+ ore;version="[2.4,3)",org.slf4j;version="[1.6,2)",org.osgi.framework,co
+ m.sun.jersey.server.impl.container.servlet;version="[1.19,2)",com.sun.j
+ ersey.api.core
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-2.3.0.201405100607
+Web-ContextPath: /onos/rest
