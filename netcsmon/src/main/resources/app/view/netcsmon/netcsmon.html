@@ -1,0 +1,46 @@
+<!-- partial HTML -->
+<div id="ov-netcsmon">
+    <div class="tabular-header">
+        <h2>Packet In Stats ({{tableData.length}} total)</h2>
+        <div class="ctrl-btns">
+            <div class="refresh" ng-class="{active: autoRefresh}"
+                 icon icon-size="36" icon-id="refresh"
+                 ng-click="toggleRefresh()"></div>
+        </div>
+    </div>
+
+    <div class="summary-list" onos-fixed-header>
+
+        <div class="table-header"
+             onos-sortable-header
+             sort-params="sortParams"
+             sort-callback="sortCallback(sortParams)">
+            <table>
+                <tr>
+                    <td colId="id" sortable>Switch ID </td>
+                    <td colId="src" sortable>Source Address</td>
+                    <td colId="dst" sortable>Destination Address</td>
+                    <td colId="cnt" sortable>Counter</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-body">
+            <table>
+                <tr ng-hide="tableData.length" class="no-data ignore-width">
+                    <td colspan="4">
+                        No rules found
+                    </td>
+                </tr>
+
+                <tr ng-repeat="fwd in tableData"
+                    ng-repeat-done>
+                    <td>{{fwd.id}}</td>
+                    <td>{{fwd.src}}</td>
+                    <td>{{fwd.dst}}</td>
+                    <td>{{fwd.cnt}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
